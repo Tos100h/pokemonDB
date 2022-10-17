@@ -17,4 +17,14 @@ class TeamController extends AbstractController
             'controller_name' => 'TeamController',
         ]);
     }
+
+    /**
+     * @Route("/team/new", name="app_team_new")
+     */
+    public function new(): Response
+    {
+        return $this->render('team/new.html.twig', [
+            'controller_name' => 'TeamController',
+        ]);
+    }
 }
