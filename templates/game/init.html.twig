@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuessTypeGameController!{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <p>Commencez le Geu </p>
+        <form action="{{ path('app_guess_type_game_start') }}" method="post" class="form-example">   
+        
+        <label for="maxturn">Nombre de tours: </label>
+        <select name="maxturn" id="maxturn">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+            <option value="100">100 sérieux ?</option>
+        </select><br>
+            <fieldset>
+            <legend>Veuillez sélectionner les generations à inclure</legend>
+            <div>
+                <input type="checkbox" id="1" name="gen[1]" value="1">
+                <label for="1">1</label>
+            </div>
+            <div>
+                <input type="checkbox" id="2" name="gen[2]" value="2">
+                <label for="2">2</label>
+            </div>
+            <div>
+                <input type="checkbox" id="3" name="gen[3]" value="3" checked>
+                <label for="3">3</label>
+            </div>
+            <div>
+                <input type="checkbox" id="4" name="gen[4]" value="4" checked>
+                <label for="4">4</label>
+            </div>
+            <div>
+                <input type="checkbox" id="5" name="gen[5]" value="5" checked>
+                <label for="5">5</label>
+            </div>
+            <div>
+                <input type="checkbox" id="6" name="gen[6]" value="6" checked>
+                <label for="6">6</label>
+            </div>
+            <div>
+                <input type="checkbox" id="7" name="gen[7]" value="7" checked>
+                <label for="7">7</label>
+            </div>
+            <div>
+                <input type="checkbox" id="8" name="gen[8]" value="8" checked>
+                <label for="8">8</label>
+            </div>
+            </fieldset>
+
+            <legend>Cocher pour inclure les formes alternatives (Mega evolutions, formes regionales ...)</legend>
+            <div>
+                <input type="checkbox" id="formes" name="formes" value="true">
+                <label for="formes">oui</label>
+            </div>
+
+            <legend>Uniquement des formes complétement évolué (pas de carapuce/carabaffe mais tortank oui)</legend>
+            <div>
+                <input type="checkbox" id="evol" name="evol" value="true">
+                <label for="evol">oui</label>
+            </div>
+            
+            
+            
+
+            <input type="submit" value="Commencer">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    <p>coucou</p>
+
+    <hr>
+
+    <a href="{{ path('app_pokemon_show', { 'id' : 156 }) }}"><p>Staross</p></a>
+    <a href="{{ path('app_pokemon_gen', { 'gen' : 1 }) }}"><p>voir la gen 1</p></a>
+    <a href="{{ path('app_guess_type_game_init') }}"><p>Play the game!</p></a>
+
+    <hr>
+{% endblock %}

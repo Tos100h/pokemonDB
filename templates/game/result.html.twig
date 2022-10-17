@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuessTypeGameController!{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-3">
+            <img src="https://img.pokemondb.net/artwork/avif/{{ pokemon.slug|lower }}.avif">
+            <hr>
+            <h2 class="text-center">{{ pokemon.name }} (Génération {{ pokemon.Generation}})</h2>
+        </div>
+
+        <div class="col-4">
+            <div class="row">
+                <div class="col-3">
+                    Vous avez choisi :
+                </div>
+                <div class="col-6">
+                    <img src="/data/img/types/{{choices.type1.id}}.png" alt="{{ choices.type1 }}" height="22">
+                    {% if choices.type2 is not null %}
+                        <img src="/data/img/types/{{choices.type2.id}}.png" alt="{{ choices.type2 }}" height="22">
+                    {% endif %}
+                </div>
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-3">
+                    Le pokemon est :
+                </div>
+                <div class="col-6">
+                    <img src="/data/img/types/{{pokemon.type1.id}}.png" alt="{{ pokemon.type1 }}" height="22">
+                    {% if pokemon.type2 is not null %}
+                        <img src="/data/img/types/{{pokemon.type2.id}}.png" alt="{{ pokemon.type2 }}" height="22">
+                    {% endif %}
+                </div>
+
+            </div>
+            <hr>
+            <p>Vous avez {{points}} bonne(s) réponse(s)</p>
+
+            <hr>
+            <p>Tour {{game.thisTurn}} / {{ game.nbTurn }}</p>
+            <p><a href="{{ path('app_guess_type_game') }}">Continuez</a></p>
+        </div>
+
+        <div class="col-2"></div>
+    </div>
+{% endblock %}

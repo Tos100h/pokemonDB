@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ pokemon.name }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-4">
+                    <img src="https://img.pokemondb.net/artwork/avif/{{ pokemon.slug|lower }}.avif" alt="{{ pokemon.name }}" title="{{ pokemon.name }}">
+                </div>
+                <div class="col-6">
+                    <h1>{{ pokemon.name }}</h1>
+                    <hr>
+                    <div class="row">
+                        <p><div class="col-3">
+                            Num pokedex :
+                        </div>
+                        <div class="col-2">
+                            {{ pokemon.numPokedex }}
+                        </div></p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="/data/img/types/{{pokemon.type1.id}}.png" alt="{{ pokemon.type1 }}" title="{{ pokemon.type1 }}">
+                        </div>
+                        <div class="col-4">
+                            {% if pokemon.type2 is not null %}
+                                <img src="/data/img/types/{{pokemon.type2.id}}.png" alt="{{ pokemon.type2 }}" title="{{ pokemon.type2 }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <p><div class="col-3">
+                            Generation :
+                        </div>
+                        <div class="col-2">
+                            {{ pokemon.generation }}
+                        </div></p>
+                    </div>
+                    <div class="row">
+                        <p><div class="col-3">
+                            Base Stat Total :
+                        </div>
+                        <div class="col-2">
+                            {{ pokemon.BST }}
+                        </div></p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <p><div class="col-3">
+                            Height :
+                        </div>
+                        <div class="col-2">
+                            {{ pokemon.height /100 }} m
+                        </div></p>
+                    </div>
+                    <div class="row">
+                        <p><div class="col-3">
+                            Weight :
+                        </div>
+                        <div class="col-2">
+                            {{ pokemon.weight /100 }} kg
+                        </div></p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-3">HP :</div>
+                        <div class="col-1">{{ pokemon.statHp }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statHp /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Attaque :</div>
+                        <div class="col-1">{{ pokemon.statAtk }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statAtk /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Defense :</div>
+                        <div class="col-1">{{ pokemon.statDef }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statDef /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Special Attaque :</div>
+                        <div class="col-1">{{ pokemon.statSpa }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statSpa /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Special Defense :</div>
+                        <div class="col-1">{{ pokemon.statSpd }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statSpd /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">Speed :</div>
+                        <div class="col-1">{{ pokemon.statSpeed }}</div>
+                        <div class="col-6">
+                            <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: {{ pokemon.statSpeed /250 *100 }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6"></div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+{% endblock %}

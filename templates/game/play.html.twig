@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuessTypeGameController!{% endblock %}
+
+{% block body %}
+
+
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-3">
+        <img src="https://img.pokemondb.net/artwork/avif/{{ pokemon.slug|lower }}.avif">
+    </div>
+    <div class="col-4">
+        <form action="{{ path('app_guess_type_game_result') }}" method="post" class="form-example">    
+            <div class="form-example">
+                    <legend>Devinez le ou les types de ce pokemon ou <a href="{{ path('app_guess_type_game_play') }}">rejouez ?</a></legend>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                        <p>Type 1 ?</p>
+                        <input type="radio"><label></label><br>
+                        {% for type in types %}
+                            <input type="radio" id="t1-{{ type }}" name="t1" value="{{ type }}" required>
+                            <label for="t1-{{ type }}"><img src="/data/img/types/{{type.id}}.png" alt="{{ type }}" height="22"></label>
+                            <br>
+                        {% endfor %}
+                        </div>
+                        <div class="col-6">
+                        <p>Type 2 ?</p>
+                        <input type="radio" id="NULL" name="t2" value="" checked required>
+                        <label for="NULL">Aucun</label>
+                        <br>
+                        {% for type in types %}
+                            <input type="radio" id="t2-{{ type }}" name="t2" value="{{ type }}">
+                            <label for="t2-{{ type }}"><img src="/data/img/types/{{type.id}}.png" alt="{{ type }}" height="22"></label>
+                            <br>
+                        {% endfor %}
+                        </div>
+
+                    </div>
+
+            </div>
+        <div class="form-example">
+            <input type="submit" value="Valider">
+        </div>
+        </form>
+    </div>
+    <div class="col-2"></div>
+    
+
+</div>
+
+{% endblock %}

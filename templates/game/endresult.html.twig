@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuessTypeGameController!{% endblock %}
+
+{% block body %}
+
+
+
+    <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-4">
+        <p>Vous avez eu {{ results.points }} points en {{ results.nbturn }} manches</p>
+        {% set winrate = (results.points / ( results.nbturn *2 ) *100) %}
+        <p>Soit {{ winrate|number_format(0)}}% de bonnes réponses</p>
+        {% if winrate == 100 %}
+        <h4>GG !!!!</h4>
+        {% endif %}
+        {% if winrate == 0 %}
+        <h4>Malaise zereau LOL Cringe</h4>
+        {% endif %}
+
+
+        <a href="{{ path('app_guess_type_game_init') }}"><p>Relancez une partie ?</p></a>
+        </div>
+        <div class="col-2"></div>
+    </div>
+{% endblock %}

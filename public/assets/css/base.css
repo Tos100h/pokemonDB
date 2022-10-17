@@ -1,0 +1,47 @@
+body {
+    position: relative;
+    margin-top: 70px;
+}
+
+
+.navbar-item-custom , .navbar-item-custom a {
+    color: white;
+
+}
+
+.footer-custom {
+    text-align: center;
+    position: absolute;
+    bottom : 0px;
+    width: 100%;
+    background-color: #dfeaff;
+    padding-top: 25px;
+    margin-top: 20px;
+}
+
+.lil-img {
+    border-radius: 8px;
+    height: 22px;
+}
+
+.tdt-img {
+    border-radius: 8px;
+    height: 18px;
+}
+
+.p-img {
+    height: 150px;
+}
+
+.v-200 {
+    background-color: rgb(255, 0, 0);
+
+}
+
+.v-50 {
+    background-color: rgb(90, 134, 24);
+}
+
+.v-0 {
+    background-color: darkgrey;
+}
